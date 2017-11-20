@@ -1,7 +1,8 @@
 
 public class Prime {
 	
-	static long maxPrime = 300_000_0000L;
+	static long maxPrime = 200_000_0000L;
+	static long primeAdditional = 300_000_0000L;
 	static int totalPrimes = 0;
 	static boolean isPrime = true;
 	
@@ -11,23 +12,29 @@ public class Prime {
 
 	}
 	
-	public static int primes(long maxPrime) {
-		for(int i = 2; i < maxPrime; i++) {
-            isPrime = true;
-            for(int j = 2; j < i ; j++) {
-            	if(i % j == 0) {
-            		isPrime = false;
-            		break;
-            	}
-            }
-            if(isPrime) totalPrimes++;
-		}
-		return totalPrimes;
-	}
+	public static long primes(long prime) {
+		int counter = 0;
+		boolean[] isPrime = new boolean[(int)prime + 1];
 
+		for (int populator = 0; populator <= prime; populator++) {
+			isPrime[populator] = true;
+		}
+
+		for (int factor = 2; factor * factor <= prime; factor++) {
+			if (isPrime[factor]) {
+				for (int j = factor; factor * j <= prime; j++) {
+					isPrime[factor * j] = false;
+				}
+			}
+		}
+		
+		for (int i = 1; i <= prime; i++) {
+			if (isPrime[i]) counter++;
+		}
+		return counter - 1;
 }
 
-/*
+/*w
  * 0 - 100 = 25
  * 0 - 1000 = 168
  * 0 - 10000 = 1229

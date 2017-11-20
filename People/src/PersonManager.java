@@ -7,9 +7,11 @@ public class PersonManager {
 	public String searchList(String name) {
 		for (Person person : personList) {
 			if (name.equals(name)) {
-				return (name + " Does exist. Details are below\n" + person.toString());
+				//return (name + " Does exist. Details are below\n" + person.toString());
+				return name;
 			}
 		}
-		return "Person does NOT exist";
+		return name;
 	}
+	
 }

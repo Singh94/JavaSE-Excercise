@@ -18,17 +18,21 @@ public class ExamplePerson {
 		personManager.personList.add(joe);
 		personManager.personList.add(bob);
 		
+		
+		System.out.println("Printing out Person List");
 		for (Person person : personManager.personList) {
 			System.out.println(person.toString());
 		}
 		
+		System.out.println("\nTesting for person Joe");
 		System.out.println(personManager.searchList("Joe"));
 	}
 	
 	public String searchList(String name) {
 		for (Person person : personList) {
 			if (name.equals(name)) {
-				return (name + " Does exist. Details are below\n" + person.toString());
+				return (name + " Does exist. Details are below\n" + 
+						person.toString());
 			}
 		}
 		return "Person does NOT exist";

@@ -1,0 +1,11 @@
+
+
+Create a loop to iterate through the ArrayList,
+writing each object to one file, recommended IO 
+library is BufferedWriter (Think about how you 
+format this) Separately, create another 
+ArrayList and populate it with the data from 
+the file you just created. Recommended IO 
+library is BufferedReader (You’re going to have 
+to parse it back in the format you wrote it in, 
+use String.split())
